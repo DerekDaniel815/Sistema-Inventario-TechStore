@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Producto - TechStore</title>
+    <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Registrar Producto</h1>
+        <nav>
+            <a href="producto.html">← Volver al listado</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <form action="#">
+                <div class="form-group">
+                    <label for="nombre">Nombre del Producto:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_cat">Categoría:</label>
+                    <select id="id_cat" name="id_cat">
+                        <option value="1">Hardware</option>
+                        <option value="2">Periféricos</option>
+                        <option value="3">Almacenamiento</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="precio">Precio (S/):</label>
+                    <input type="number" id="precio" name="precio" step="0.01">
+                </div>
+
+                <div class="form-group">
+                    <label for="foto">Imagen del Producto:</label>
+                    <input type="file" id="foto" name="foto">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn">Guardar Producto</button>
+                    <button type="reset" class="btn-secondary">Limpiar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

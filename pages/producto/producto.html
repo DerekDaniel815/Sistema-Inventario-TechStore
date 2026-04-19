@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Productos - TechStore</title>
+    <link rel="stylesheet" href="../../styles/main.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>TechStore - Productos</h1>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="producto.html" class="active">Productos</a></li>
+                <li><a href="../categoria/categoria.html">Categorías</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section>
+            <div class="header-table">
+                <h2>Inventario de Productos</h2>
+                <a href="producto-form.html" class="btn">+ Nuevo Producto</a>
+            </div>
+
+            <table class="table-custom">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Stock</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#101</td>
+                        <td><img src="../../assets/img/mouse.jpg" alt="Mouse" width="50"></td>
+                        <td>Mouse Gamer RGB</td>
+                        <td>25</td>
+                        <td>S/ 85.00</td>
+                        <td>
+                            <button>Editar</button>
+                            <button>Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
