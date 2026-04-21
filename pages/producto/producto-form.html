@@ -1,51 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Registro de Producto - TechStore</title>
-    <link rel="stylesheet" href="../../styles/main.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registrar Producto - TechStore</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
     <header class="main-header">
-        <h1>Registrar Producto</h1>
-        <nav>
-            <a href="producto.html">← Volver al listado</a>
-        </nav>
+      <div class="logo">
+        <img
+          src="../../assets/img/logo-techstore.png"
+          alt="Logotipo de TechStore"
+        />
+        <h1>TechStore</h1>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../../index.html">Inicio</a></li>
+          <li><a href="producto.html" class="active">Productos</a></li>
+          <li><a href="../registro.html">Registrar</a></li>
+          <li><a href="../reportes.html">Reportes</a></li>
+          <li><a href="../contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main class="container">
-        <section class="card">
-            <form action="#">
-                <div class="form-group">
-                    <label for="nombre">Nombre del Producto:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
+      <section class="hero">
+        <h2>Nuevo Producto</h2>
+        <p>Completa los campos para añadir un artículo al inventario.</p>
+      </section>
 
-                <div class="form-group">
-                    <label for="id_cat">Categoría:</label>
-                    <select id="id_cat" name="id_cat">
-                        <option value="1">Hardware</option>
-                        <option value="2">Periféricos</option>
-                        <option value="3">Almacenamiento</option>
-                    </select>
-                </div>
+      <section class="card" style="max-width: 600px; margin: auto">
+        <form action="#">
+          <div class="form-group">
+            <label for="nombre">Nombre del Producto</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Ej: Laptop HP Pavilion"
+              required
+            />
+          </div>
 
-                <div class="form-group">
-                    <label for="precio">Precio (S/):</label>
-                    <input type="number" id="precio" name="precio" step="0.01">
-                </div>
+          <div class="form-group">
+            <label for="id_cat">Categoría</label>
+            <select id="id_cat" name="id_cat">
+              <option value="1">Hardware</option>
+              <option value="2">Periféricos</option>
+              <option value="3">Almacenamiento</option>
+            </select>
+          </div>
 
-                <div class="form-group">
-                    <label for="foto">Imagen del Producto:</label>
-                    <input type="file" id="foto" name="foto">
-                </div>
+          <div class="form-group">
+            <label for="precio">Precio Unitario (S/)</label>
+            <input
+              type="number"
+              id="precio"
+              name="precio"
+              step="0.01"
+              placeholder="0.00"
+            />
+          </div>
 
-                <div class="form-actions">
-                    <button type="submit" class="btn">Guardar Producto</button>
-                    <button type="reset" class="btn-secondary">Limpiar</button>
-                </div>
-            </form>
-        </section>
+          <div class="form-group">
+            <label for="foto">Imagen del Producto</label>
+            <input type="file" id="foto" name="foto" />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Guardar Producto</button>
+            <button type="reset" class="btn-secondary">Limpiar</button>
+          </div>
+        </form>
+      </section>
     </main>
-</body>
+  </body>
 </html>
