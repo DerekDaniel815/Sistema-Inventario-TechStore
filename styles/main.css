@@ -1,102 +1,180 @@
-/* 1. Variables de color (Se mantienen para el orden) */
+/* Variables Globales */
 :root {
     --primary-color: #003566;
     --accent-color: #ffc300;
-    --white: #ffffff;
+    --text-dark: #000814;
     --bg-light: #f1f1f1;
+    --white: #ffffff;
+    --border-radius: 8px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* 2. Estilos base */
+/* Estilos Base */
 body {
-    font-family: Arial, sans-serif; /* Fuente estándar */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
-    padding: 0;
     background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
-/* 3. Header y Navegación simple */
+/* Header Profesional */
 .main-header {
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 15px;
-    text-align: center; /* Todo centrado para evitar flex complejo */
-}
-
-.main-header .logo img {
-    height: 40px;
-}
-
-.main-nav ul {
-    padding: 0;
-    list-style: none;
+    padding: 1rem 5%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
     gap: 15px;
+}
+
+.logo img { 
+    height: 45px; 
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Navegación con Efectos */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 .main-nav a {
     color: var(--white);
     text-decoration: none;
-    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: all 0.3s ease;
 }
 
+.main-nav a:hover, 
 .main-nav a.active {
-    font-weight: bold;
     color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
 }
 
-/* 4. Contenedor y Secciones */
+/* Contenedor y Hero */
 .container {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
 }
 
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+/* Dashboard Grid (Columnas) */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* Tarjetas (Cards) con Estilo */
 .card {
     background: var(--white);
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd; /* Borde gris simple */
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* 5. Tablas básicas */
+.card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 10px;
+}
+
+/* Multimedia y Figuras */
+.img-fluid {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+figcaption {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Botones Mejorados */
+.btn {
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: transform 0.2s, background-color 0.2s;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #e6b000;
+    transform: translateY(-2px);
+}
+
+/* Tablas (Para las vistas de producto e inventario) */
 .table-custom {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-}
-
-.table-custom th, .table-custom td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
+    margin-top: 20px;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
 }
 
 .table-custom th {
-    background-color: #eee;
-}
-
-/* 6. Botones y Multimedia */
-.btn {
-    background-color: var(--accent-color);
-    color: black;
-    padding: 8px 12px;
-    text-decoration: none;
-    border: 1px solid #000;
-    display: inline-block;
-}
-
-.img-fluid {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-}
-
-/* 7. Footer plano */
-.main-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
     padding: 15px;
-    font-size: 12px;
+    text-align: left;
+}
+
+.table-custom td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Footer Profesional */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-top: 4rem;
+}
+
+.main-footer p {
+    margin: 8px 0;
 }
