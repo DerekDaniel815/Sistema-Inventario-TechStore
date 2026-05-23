@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categorías - TechStore</title>
+    <link rel="stylesheet" href="../../styles/main.css" />
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="../../assets/img/logo-techstore.png" alt="Logotipo de TechStore" />
+            <h1>Tech<span>Store</span></h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../producto/producto.html">Productos</a></li>
+                <li><a href="categoria.html" class="active">Categorías</a></li>
+                <li><a href="../reportes/reportes.html">Reportes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+            <a href="../../index.html">Inicio</a>
+            <span class="sep">/</span>
+            <span>Categorías</span>
+        </nav>
+
+        <div class="page-header">
+            <div>
+                <h2>CATEGORÍAS</h2>
+                <p>Organiza los productos por familias para encontrarlos más rápido.</p>
+            </div>
+            <div class="page-actions">
+                <a href="categoria-form.html" class="btn">+ Nueva Categoría</a>
+            </div>
+        </div>
+
+        <div class="list-layout">
+            <!-- Tabla principal -->
+            <section class="panel">
+                <div class="panel-header">
+                    <h3>Tabla de categorías</h3>
+                    <input type="search" class="search-input" placeholder="Buscar categoría..." />
+                </div>
+                <div class="panel-body no-pad">
+                    <div class="table-wrap">
+                        <table class="table-custom">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre CAT</th>
+                                    <th>Descripción</th>
+                                    <th># Productos</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#1</td>
+                                    <td><strong>Hardware</strong></td>
+                                    <td>Componentes internos como RAM, CPU, placas.</td>
+                                    <td>42</td>
+                                    <td><span class="badge success dot">Activa</span></td>
+                                    <td>
+                                        <div class="actions-cell">
+                                            <a href="categoria-form.html?id=1" class="btn-icon">Editar</a>
+                                            <button type="button" class="btn-icon danger">Eliminar</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#2</td>
+                                    <td><strong>Periféricos</strong></td>
+                                    <td>Mouse, teclado, audífonos y accesorios.</td>
+                                    <td>58</td>
+                                    <td><span class="badge success dot">Activa</span></td>
+                                    <td>
+                                        <div class="actions-cell">
+                                            <a href="categoria-form.html?id=2" class="btn-icon">Editar</a>
+                                            <button type="button" class="btn-icon danger">Eliminar</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#3</td>
+                                    <td><strong>Almacenamiento</strong></td>
+                                    <td>Discos sólidos, HDD y memorias.</td>
+                                    <td>23</td>
+                                    <td><span class="badge success dot">Activa</span></td>
+                                    <td>
+                                        <div class="actions-cell">
+                                            <a href="categoria-form.html?id=3" class="btn-icon">Editar</a>
+                                            <button type="button" class="btn-icon danger">Eliminar</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#4</td>
+                                    <td><strong>Audio</strong></td>
+                                    <td>Parlantes, micrófonos y audífonos profesionales.</td>
+                                    <td>15</td>
+                                    <td><span class="badge warning dot">Inactiva</span></td>
+                                    <td>
+                                        <div class="actions-cell">
+                                            <a href="categoria-form.html?id=4" class="btn-icon">Editar</a>
+                                            <button type="button" class="btn-icon danger">Eliminar</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#5</td>
+                                    <td><strong>Redes</strong></td>
+                                    <td>Routers, switches, cables y adaptadores.</td>
+                                    <td>12</td>
+                                    <td><span class="badge success dot">Activa</span></td>
+                                    <td>
+                                        <div class="actions-cell">
+                                            <a href="categoria-form.html?id=5" class="btn-icon">Editar</a>
+                                            <button type="button" class="btn-icon danger">Eliminar</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sidebar filtros -->
+            <aside class="panel filter-sidebar">
+                <div class="panel-header">
+                    <h3>Filtros</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="filter-group">
+                        <label for="f-nombre">Nombre</label>
+                        <input type="text" id="f-nombre" placeholder="Buscar..." />
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Estado</label>
+                        <div class="checkbox-list">
+                            <label><input type="checkbox" checked /> Activas</label>
+                            <label><input type="checkbox" /> Inactivas</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="f-orden">Ordenar por</label>
+                        <select id="f-orden">
+                            <option>Nombre (A-Z)</option>
+                            <option>Nombre (Z-A)</option>
+                            <option>Más productos</option>
+                            <option>Menos productos</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-actions">
+                        <button type="button" class="btn">Aplicar</button>
+                        <button type="reset" class="btn-secondary">Limpiar</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 <strong>TechStore</strong> — Taller de Programación Web</p>
+    </footer>
+</body>
+</html>
