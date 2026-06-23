@@ -75,7 +75,7 @@
                     </div>
                     <div class="panel-body no-pad">
                         <div class="table-wrap">
-                            <table class="table-custom">
+                            <table class="table-custom" id="tabla-stock">
                                 <thead>
                                     <tr>
                                         <th>Producto</th>
@@ -85,36 +85,7 @@
                                         <th>Estado</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Mouse Gamer RGB</strong></td>
-                                        <td>S/ 85.00</td>
-                                        <td>3</td>
-                                        <td><span class="badge info">LÓGICA</span></td>
-                                        <td><span class="badge warning dot">Stock bajo</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Teclado Mecánico</strong></td>
-                                        <td>S/ 220.00</td>
-                                        <td>18</td>
-                                        <td><span class="badge info">LÓGICA</span></td>
-                                        <td><span class="badge success dot">En stock</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>SSD 480GB</strong></td>
-                                        <td>S/ 175.00</td>
-                                        <td>25</td>
-                                        <td><span class="badge info">LÓGICA</span></td>
-                                        <td><span class="badge success dot">En stock</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Memoria RAM 8GB</strong></td>
-                                        <td>S/ 145.00</td>
-                                        <td>0</td>
-                                        <td><span class="badge info">LÓGICA</span></td>
-                                        <td><span class="badge danger dot">Sin stock</span></td>
-                                    </tr>
-                                </tbody>
+                                <tbody></tbody>
                             </table>
                         </div>
                     </div>
@@ -128,7 +99,7 @@
                     </div>
                     <div class="panel-body no-pad">
                         <div class="table-wrap">
-                            <table class="table-custom">
+                            <table class="table-custom" id="tabla-historial">
                                 <thead>
                                     <tr>
                                         <th>Nombre producto</th>
@@ -139,48 +110,7 @@
                                         <th>Fecha</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Mouse Gamer RGB</strong></td>
-                                        <td><span class="badge success">+2</span></td>
-                                        <td><span class="badge warning">−1</span></td>
-                                        <td>0</td>
-                                        <td><span class="badge info">LÓGICA</span></td>
-                                        <td>HOY</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Mouse Gamer RGB</strong></td>
-                                        <td><span class="badge success">+5</span></td>
-                                        <td><span class="badge warning">−3</span></td>
-                                        <td><span class="badge danger">1</span></td>
-                                        <td><span class="badge info">LÓGICA</span></td>
-                                        <td>AYER</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Teclado Mecánico</strong></td>
-                                        <td><span class="badge success">+10</span></td>
-                                        <td><span class="badge warning">−2</span></td>
-                                        <td>0</td>
-                                        <td><span class="badge info">LÓGICA</span></td>
-                                        <td>HOY</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>SSD 480GB</strong></td>
-                                        <td><span class="badge success">+15</span></td>
-                                        <td><span class="badge warning">−5</span></td>
-                                        <td>0</td>
-                                        <td><span class="badge info">LÓGICA</span></td>
-                                        <td>21/05/2026</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Memoria RAM 8GB</strong></td>
-                                        <td>0</td>
-                                        <td><span class="badge warning">−4</span></td>
-                                        <td><span class="badge danger">2</span></td>
-                                        <td><span class="badge info">LÓGICA</span></td>
-                                        <td>20/05/2026</td>
-                                    </tr>
-                                </tbody>
+                                <tbody></tbody>
                             </table>
                         </div>
                     </div>
@@ -203,9 +133,6 @@
                             <label for="f-cat">Categoría</label>
                             <select id="f-cat">
                                 <option value="">Todas</option>
-                                <option>Hardware</option>
-                                <option>Periféricos</option>
-                                <option>Almacenamiento</option>
                             </select>
                         </div>
 
@@ -257,5 +184,18 @@
     <footer class="main-footer">
         <p>&copy; 2026 <strong>TechStore</strong> — Taller de Programación Web</p>
     </footer>
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/config.js"></script>
+    <script src="../../js/seed.js"></script>
+    <script src="../../js/categorias-data.js"></script>
+    <script src="../../js/productos-data.js"></script>
+    <script src="../../js/movimientos-data.js"></script>
+    <script src="../../js/stats.js"></script>
+    <script src="../../js/init.js"></script>
+    <script src="../../js/format-utils.js"></script>
+    <script src="../../js/ui-utils.js"></script>
+    <script src="../../js/categoria-producto.js"></script>
+    <script src="../../js/reportes.js"></script>
 </body>
 </html>

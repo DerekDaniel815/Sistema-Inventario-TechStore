@@ -48,7 +48,7 @@
                 </div>
                 <div class="panel-body no-pad">
                     <div class="table-wrap">
-                        <table class="table-custom">
+                        <table class="table-custom" id="tabla-productos">
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
@@ -59,89 +59,7 @@
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="cell-product">
-                                            <img src="../../assets/img/mouse.jpg" alt="Mouse" width="40" height="40" />
-                                            <div>
-                                                <div class="name">Mouse Gamer RGB</div>
-                                                <div class="sub">SKU #101</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Mouse óptico con 6 botones e iluminación.</td>
-                                    <td><span class="badge info">Periféricos</span></td>
-                                    <td>S/ 85.00</td>
-                                    <td>Logitech G502</td>
-                                    <td>
-                                        <div class="actions-cell">
-                                            <a href="producto-form.html?id=101" class="btn-icon">Editar</a>
-                                            <button type="button" class="btn-icon danger">Eliminar</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="cell-product">
-                                            <div>
-                                                <div class="name">Teclado Mecánico</div>
-                                                <div class="sub">SKU #102</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Teclado switch azul, retroiluminado.</td>
-                                    <td><span class="badge info">Periféricos</span></td>
-                                    <td>S/ 220.00</td>
-                                    <td>Redragon K552</td>
-                                    <td>
-                                        <div class="actions-cell">
-                                            <a href="producto-form.html?id=102" class="btn-icon">Editar</a>
-                                            <button type="button" class="btn-icon danger">Eliminar</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="cell-product">
-                                            <div>
-                                                <div class="name">SSD 480GB</div>
-                                                <div class="sub">SKU #103</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Unidad de estado sólido SATA III.</td>
-                                    <td><span class="badge">Almacenamiento</span></td>
-                                    <td>S/ 175.00</td>
-                                    <td>Kingston A400</td>
-                                    <td>
-                                        <div class="actions-cell">
-                                            <a href="producto-form.html?id=103" class="btn-icon">Editar</a>
-                                            <button type="button" class="btn-icon danger">Eliminar</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="cell-product">
-                                            <div>
-                                                <div class="name">Memoria RAM 8GB</div>
-                                                <div class="sub">SKU #104</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>DDR4 3200MHz para escritorio.</td>
-                                    <td><span class="badge success">Hardware</span></td>
-                                    <td>S/ 145.00</td>
-                                    <td>Corsair Vengeance</td>
-                                    <td>
-                                        <div class="actions-cell">
-                                            <a href="producto-form.html?id=104" class="btn-icon">Editar</a>
-                                            <button type="button" class="btn-icon danger">Eliminar</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>
@@ -157,9 +75,6 @@
                         <label for="f-cat">Categoría</label>
                         <select id="f-cat">
                             <option value="">Todas</option>
-                            <option>Hardware</option>
-                            <option>Periféricos</option>
-                            <option>Almacenamiento</option>
                         </select>
                     </div>
 
@@ -167,10 +82,6 @@
                         <label for="f-marca">Marca</label>
                         <select id="f-marca">
                             <option value="">Todas</option>
-                            <option>Logitech</option>
-                            <option>Redragon</option>
-                            <option>Kingston</option>
-                            <option>Corsair</option>
                         </select>
                     </div>
 
@@ -186,8 +97,8 @@
                         <label>Disponibilidad</label>
                         <div class="checkbox-list">
                             <label><input type="checkbox" checked /> En stock</label>
-                            <label><input type="checkbox" /> Stock bajo</label>
-                            <label><input type="checkbox" /> Sin stock</label>
+                            <label><input type="checkbox" checked /> Stock bajo</label>
+                            <label><input type="checkbox" checked /> Sin stock</label>
                         </div>
                     </div>
 
@@ -203,5 +114,18 @@
     <footer class="main-footer">
         <p>&copy; 2026 <strong>TechStore</strong> — Taller de Programación Web</p>
     </footer>
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/config.js"></script>
+    <script src="../../js/seed.js"></script>
+    <script src="../../js/categorias-data.js"></script>
+    <script src="../../js/productos-data.js"></script>
+    <script src="../../js/movimientos-data.js"></script>
+    <script src="../../js/stats.js"></script>
+    <script src="../../js/init.js"></script>
+    <script src="../../js/format-utils.js"></script>
+    <script src="../../js/ui-utils.js"></script>
+    <script src="../../js/categoria-producto.js"></script>
+    <script src="../../js/producto-lista.js"></script>
 </body>
 </html>

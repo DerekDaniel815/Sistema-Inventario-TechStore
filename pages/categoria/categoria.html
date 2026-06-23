@@ -48,7 +48,7 @@
                 </div>
                 <div class="panel-body no-pad">
                     <div class="table-wrap">
-                        <table class="table-custom">
+                        <table class="table-custom" id="tabla-categorias">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -59,73 +59,7 @@
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>#1</td>
-                                    <td><strong>Hardware</strong></td>
-                                    <td>Componentes internos como RAM, CPU, placas.</td>
-                                    <td>42</td>
-                                    <td><span class="badge success dot">Activa</span></td>
-                                    <td>
-                                        <div class="actions-cell">
-                                            <a href="categoria-form.html?id=1" class="btn-icon">Editar</a>
-                                            <button type="button" class="btn-icon danger">Eliminar</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#2</td>
-                                    <td><strong>Periféricos</strong></td>
-                                    <td>Mouse, teclado, audífonos y accesorios.</td>
-                                    <td>58</td>
-                                    <td><span class="badge success dot">Activa</span></td>
-                                    <td>
-                                        <div class="actions-cell">
-                                            <a href="categoria-form.html?id=2" class="btn-icon">Editar</a>
-                                            <button type="button" class="btn-icon danger">Eliminar</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#3</td>
-                                    <td><strong>Almacenamiento</strong></td>
-                                    <td>Discos sólidos, HDD y memorias.</td>
-                                    <td>23</td>
-                                    <td><span class="badge success dot">Activa</span></td>
-                                    <td>
-                                        <div class="actions-cell">
-                                            <a href="categoria-form.html?id=3" class="btn-icon">Editar</a>
-                                            <button type="button" class="btn-icon danger">Eliminar</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#4</td>
-                                    <td><strong>Audio</strong></td>
-                                    <td>Parlantes, micrófonos y audífonos profesionales.</td>
-                                    <td>15</td>
-                                    <td><span class="badge warning dot">Inactiva</span></td>
-                                    <td>
-                                        <div class="actions-cell">
-                                            <a href="categoria-form.html?id=4" class="btn-icon">Editar</a>
-                                            <button type="button" class="btn-icon danger">Eliminar</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#5</td>
-                                    <td><strong>Redes</strong></td>
-                                    <td>Routers, switches, cables y adaptadores.</td>
-                                    <td>12</td>
-                                    <td><span class="badge success dot">Activa</span></td>
-                                    <td>
-                                        <div class="actions-cell">
-                                            <a href="categoria-form.html?id=5" class="btn-icon">Editar</a>
-                                            <button type="button" class="btn-icon danger">Eliminar</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>
@@ -146,7 +80,7 @@
                         <label>Estado</label>
                         <div class="checkbox-list">
                             <label><input type="checkbox" checked /> Activas</label>
-                            <label><input type="checkbox" /> Inactivas</label>
+                            <label><input type="checkbox" checked /> Inactivas</label>
                         </div>
                     </div>
 
@@ -172,5 +106,18 @@
     <footer class="main-footer">
         <p>&copy; 2026 <strong>TechStore</strong> — Taller de Programación Web</p>
     </footer>
+
+    <script src="../../js/storage.js"></script>
+    <script src="../../js/config.js"></script>
+    <script src="../../js/seed.js"></script>
+    <script src="../../js/categorias-data.js"></script>
+    <script src="../../js/productos-data.js"></script>
+    <script src="../../js/movimientos-data.js"></script>
+    <script src="../../js/stats.js"></script>
+    <script src="../../js/init.js"></script>
+    <script src="../../js/format-utils.js"></script>
+    <script src="../../js/ui-utils.js"></script>
+    <script src="../../js/categoria-producto.js"></script>
+    <script src="../../js/categoria-lista.js"></script>
 </body>
 </html>
