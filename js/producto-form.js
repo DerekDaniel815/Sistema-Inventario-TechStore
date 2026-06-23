@@ -2,6 +2,8 @@
   var form = document.querySelector(".form-card form");
   if (!form) return;
 
+  form.setAttribute("novalidate", "novalidate");
+
   var idEdit = FormatUtils.getParam("id");
   var catPreseleccionada = FormatUtils.getParam("cat");
   var titulo = document.querySelector(".page-header h2");
@@ -22,6 +24,102 @@
     CategoriaProducto.poblarSelect(selectCat, idCatInicial);
     CategoriaProducto.mostrarAvisoSinCategorias(selectCat, formActions);
   }
+
+  var campos = [
+    {
+      input: inputNombre,
+      validar: function () {
+        return FormValidacion.texto(inputNombre.value, 2, 100, {
+          vacio: "El nombre del producto es obligatorio.",
+          min: "El nombre debe tener al menos 2 caracteres.",
+          max: "El nombre no puede superar 100 caracteres."
+        });
+      }
+    },
+    {
+      input: selectCat,
+      validar: function () {
+        var errorSelect = FormValidacion.select(
+          selectCat.value,
+          "Debes seleccionar una categoría."
+        );
+        if (errorSelect) return errorSelect;
+
+        var validacionCat = CategoriaProducto.validarCategoriaParaProducto(
+          Number(selectCat.value)
+        );
+        return validacionCat.valido ? "" : validacionCat.mensaje;
+      }
+    },
+    {
+      input: inputPrecio,
+      validar: function () {
+        return FormValidacion.numero(inputPrecio.value, {
+          requerido: true,
+          min: 0.01,
+          max: 999999.99,
+          invalido: "Ingresa un precio válido.",
+          vacio: "El precio es obligatorio.",
+          minMsg: "El precio debe ser mayor a 0.",
+          maxMsg: "El precio es demasiado alto."
+        });
+      }
+    },
+    {
+      input: inputStock,
+      validar: function () {
+        return FormValidacion.numero(inputStock.value, {
+          requerido: false,
+          min: 0,
+          entero: true,
+          invalido: "El stock debe ser un número válido.",
+          minMsg: "El stock no puede ser negativo.",
+          enteroMsg: "El stock debe ser un número entero."
+        });
+      },
+      eventos: ["blur"]
+    },
+    {
+      input: inputMarca,
+      validar: function () {
+        var texto = inputMarca.value.trim();
+        if (!texto) return "";
+        if (texto.length > 80) {
+          return "La marca no puede superar 80 caracteres.";
+        }
+        return "";
+      },
+      eventos: ["blur"]
+    },
+    {
+      input: inputSku,
+      validar: function () {
+        var texto = inputSku.value.trim();
+        if (!texto) return "";
+        if (texto.length > 30) {
+          return "El SKU no puede superar 30 caracteres.";
+        }
+        return "";
+      },
+      eventos: ["blur"]
+    },
+    {
+      input: inputFoto,
+      validar: function () {
+        return FormValidacion.archivoImagen(inputFoto, 2);
+      },
+      eventos: ["change"]
+    }
+  ];
+
+  FormValidacion.enlazarTiempoReal(campos);
+
+  form.addEventListener("reset", function () {
+    setTimeout(function () {
+      FormValidacion.limpiarFormulario(form);
+      refrescarSelectCategorias();
+    }, 0);
+  });
 
   refrescarSelectCategorias();
 
@@ -55,25 +153,20 @@
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    if (!CategoriaProducto.hayCategoriasActivas()) {
+      UiUtils.mostrarMensaje("Primero debes crear una categoría activa.", "error");
+      return;
+    }
+
+    if (!FormValidacion.validarCampos(campos)) {
+      UiUtils.mostrarMensaje("Revisa los campos marcados en rojo.", "error");
+      return;
+    }
+
     var nombre = inputNombre.value.trim();
     var idCat = Number(selectCat.value);
     var precio = Number(inputPrecio.value);
-
-    if (!nombre) {
-      UiUtils.mostrarMensaje("El nombre es obligatorio.", "error");
-      return;
-    }
-
     var validacionCat = CategoriaProducto.validarCategoriaParaProducto(idCat);
-    if (!validacionCat.valido) {
-      UiUtils.mostrarMensaje(validacionCat.mensaje, "error");
-      return;
-    }
-
-    if (isNaN(precio) || precio < 0) {
-      UiUtils.mostrarMensaje("Precio inválido.", "error");
-      return;
-    }
 
     var guardar = function (foto) {
       var stockNuevo = Number(inputStock.value) || 0;

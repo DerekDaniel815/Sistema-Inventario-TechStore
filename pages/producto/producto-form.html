@@ -43,16 +43,16 @@
 
         <section class="form-card">
             <h3>Datos del producto</h3>
-            <form action="#" method="post">
+            <form action="#" method="post" novalidate>
                 <div class="form-grid">
                     <div class="form-group full">
                         <label for="nombre">Nombre del producto <span class="required">*</span></label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Mouse Gamer RGB" required />
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Mouse Gamer RGB" minlength="2" maxlength="100" required autocomplete="off" />
                     </div>
 
                     <div class="form-group full">
                         <label for="descripcion">Descripción</label>
-                        <textarea id="descripcion" name="descripcion" placeholder="Detalles, características técnicas, garantía..."></textarea>
+                        <textarea id="descripcion" name="descripcion" placeholder="Detalles, características técnicas, garantía..." maxlength="500"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -65,22 +65,22 @@
 
                     <div class="form-group">
                         <label for="marca">Modelo / Marca</label>
-                        <input type="text" id="marca" name="marca" placeholder="Ej: Logitech G502" />
+                        <input type="text" id="marca" name="marca" placeholder="Ej: Logitech G502" maxlength="80" />
                     </div>
 
                     <div class="form-group">
                         <label for="precio">Precio unitario (S/) <span class="required">*</span></label>
-                        <input type="number" id="precio" name="precio" step="0.01" min="0" placeholder="0.00" required />
+                        <input type="number" id="precio" name="precio" step="0.01" min="0.01" max="999999.99" placeholder="0.00" required />
                     </div>
 
                     <div class="form-group">
                         <label for="stock">Stock inicial</label>
-                        <input type="number" id="stock" name="stock" min="0" placeholder="0" />
+                        <input type="number" id="stock" name="stock" min="0" step="1" placeholder="0" />
                     </div>
 
                     <div class="form-group">
                         <label for="sku">SKU / Código</label>
-                        <input type="text" id="sku" name="sku" placeholder="Ej: #101" />
+                        <input type="text" id="sku" name="sku" placeholder="Ej: #101" maxlength="30" />
                     </div>
 
                     <div class="form-group">
@@ -121,6 +121,7 @@
     <script src="../../js/init.js"></script>
     <script src="../../js/format-utils.js"></script>
     <script src="../../js/ui-utils.js"></script>
+    <script src="../../js/form-validacion.js"></script>
     <script src="../../js/categoria-producto.js"></script>
     <script src="../../js/producto-form.js"></script>
 </body>

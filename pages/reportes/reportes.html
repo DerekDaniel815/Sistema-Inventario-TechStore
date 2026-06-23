@@ -117,66 +117,62 @@
                 </section>
             </div>
 
-            <!-- Sidebar filtros (apilado: estado + filtros generales) -->
-            <aside class="stack filter-sidebar">
-                <section class="panel">
-                    <div class="panel-header">
-                        <h3>Filtros</h3>
+            <!-- Sidebar filtros -->
+            <aside class="panel filter-sidebar">
+                <div class="panel-header">
+                    <h3>Filtros</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="filter-group">
+                        <label for="f-producto">Producto</label>
+                        <input type="text" id="f-producto" placeholder="Buscar..." />
                     </div>
-                    <div class="panel-body">
-                        <div class="filter-group">
-                            <label for="f-producto">Producto</label>
-                            <input type="text" id="f-producto" placeholder="Buscar..." />
-                        </div>
 
-                        <div class="filter-group">
-                            <label for="f-cat">Categoría</label>
-                            <select id="f-cat">
-                                <option value="">Todas</option>
-                            </select>
-                        </div>
+                    <div class="filter-group">
+                        <label for="f-cat">Categoría</label>
+                        <select id="f-cat">
+                            <option value="">Todas</option>
+                        </select>
+                    </div>
 
-                        <div class="filter-group">
-                            <label>Tipo de movimiento</label>
-                            <div class="checkbox-list">
-                                <label><input type="checkbox" checked /> Ingreso</label>
-                                <label><input type="checkbox" checked /> Salida</label>
-                                <label><input type="checkbox" /> Merma</label>
-                            </div>
-                        </div>
-
-                        <div class="filter-actions">
-                            <button type="button" class="btn">Aplicar</button>
-                            <button type="reset" class="btn-secondary">Limpiar</button>
+                    <div class="filter-group">
+                        <label>Tipo de movimiento</label>
+                        <div class="checkbox-list">
+                            <label><input type="checkbox" checked /> Ingreso</label>
+                            <label><input type="checkbox" checked /> Salida</label>
+                            <label><input type="checkbox" /> Merma</label>
                         </div>
                     </div>
-                </section>
 
-                <section class="panel">
-                    <div class="panel-header">
-                        <h3>Rango de fechas</h3>
+                    <div class="filter-divider"></div>
+                    <p class="filter-section-title">Rango de fechas</p>
+
+                    <div class="filter-group">
+                        <label for="f-desde">Desde</label>
+                        <input type="date" id="f-desde" />
                     </div>
-                    <div class="panel-body">
-                        <div class="filter-group">
-                            <label for="f-desde">Desde</label>
-                            <input type="date" id="f-desde" />
-                        </div>
-                        <div class="filter-group">
-                            <label for="f-hasta">Hasta</label>
-                            <input type="date" id="f-hasta" />
-                        </div>
-                        <div class="filter-group">
-                            <label for="f-rango">Rango rápido</label>
-                            <select id="f-rango">
-                                <option>Hoy</option>
-                                <option>Ayer</option>
-                                <option>Últimos 7 días</option>
-                                <option>Este mes</option>
-                                <option>Mes pasado</option>
-                            </select>
-                        </div>
+
+                    <div class="filter-group">
+                        <label for="f-hasta">Hasta</label>
+                        <input type="date" id="f-hasta" />
                     </div>
-                </section>
+
+                    <div class="filter-group">
+                        <label for="f-rango">Rango rápido</label>
+                        <select id="f-rango">
+                            <option>Hoy</option>
+                            <option>Ayer</option>
+                            <option>Últimos 7 días</option>
+                            <option>Este mes</option>
+                            <option>Mes pasado</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-actions">
+                        <button type="button" class="btn">Aplicar</button>
+                        <button type="reset" class="btn-secondary">Limpiar</button>
+                    </div>
+                </div>
             </aside>
         </div>
     </main>
